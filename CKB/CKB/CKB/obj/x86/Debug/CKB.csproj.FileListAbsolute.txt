@@ -1,0 +1,2 @@
+C:\CKB\CKBHorror\CKB\CKB\CKB\obj\x86\Debug\CKB.csprojResolveAssemblyReference.cache
+C:\CKB\CKBHorror\CKB\CKB\CKB\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
