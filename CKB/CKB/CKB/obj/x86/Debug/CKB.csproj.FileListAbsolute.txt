@@ -1,2 +1,7 @@
 C:\CKB\CKBHorror\CKB\CKB\CKB\obj\x86\Debug\CKB.csprojResolveAssemblyReference.cache
 C:\CKB\CKBHorror\CKB\CKB\CKB\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\CKB\CKBHorror\CKB\CKB\CKB\bin\x86\Debug\CKB.exe
+C:\CKB\CKBHorror\CKB\CKB\CKB\bin\x86\Debug\CKB.pdb
+C:\CKB\CKBHorror\CKB\CKB\CKB\obj\x86\Debug\CKB.exe
+C:\CKB\CKBHorror\CKB\CKB\CKB\obj\x86\Debug\CKB.pdb
+C:\CKB\CKBHorror\CKB\CKB\CKB\bin\x86\Debug\Content\Particle.xnb

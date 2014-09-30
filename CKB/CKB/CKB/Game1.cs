@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
@@ -19,11 +20,9 @@ namespace CKB
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        public enum GameState
-        {
-            PLAYING, PAUSE, MAIN
-        }
-
+        static Floor f;
+        Vector2 testPos = new Vector2(400, 240);
+        bool lookingUp = false;
 
         static GameState mainGameState = GameState.PLAYING;
         public static GameState State
@@ -62,6 +61,7 @@ namespace CKB
         {
             camera = new Camera2D(this);
             Components.Add(camera);
+            f = new Floor1();
             base.Initialize();
         }
 
@@ -70,42 +70,63 @@ namespace CKB
             spriteBatch = new SpriteBatch(GraphicsDevice);
         }
 
-        /// <summary>
-        /// UnloadContent will be called once per game and is the place to unload
-        /// all content.
-        /// </summary>
         protected override void UnloadContent()
         {
-            // TODO: Unload any non ContentManager content here
+            
         }
 
-        /// <summary>
-        /// Allows the game to run logic such as updating the world,
-        /// checking for collisions, gathering input, and playing audio.
-        /// </summary>
-        /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            // Allows the game to exit
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
-                this.Exit();
+            Input.Update();
 
-            // TODO: Add your update logic here
+            if (Input.rightDown())
+                testPos.X += 1;
+            if (Input.leftDown())
+                testPos.X -= 1;
+            if (Input.upDown())
+            {
+                if (!lookingUp)
+                {
+                    testPos.Y = testPos.Y -= 45;
+                    lookingUp = true;
+                }
+            }
+            else
+            {
+                if(lookingUp)
+                    testPos.Y += 45;
+                lookingUp = false;
+            }
+
+            Game1.Camera.Focus = testPos;
+            Game1.Camera.MoveSpeed = 1;
+
+            f.update(gameTime);
 
             base.Update(gameTime);
         }
 
-        /// <summary>
-        /// This is called when the game should draw itself.
-        /// </summary>
-        /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Black);
 
-            // TODO: Add your drawing code here
+            RasterizerState rs = new RasterizerState();
+            rs.CullMode = CullMode.None;
+
+            spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.LinearClamp,
+                DepthStencilState.Default, rs, null, Game1.Camera.Transform);
+            f.draw(spriteBatch);
+
+            spriteBatch.Draw(Image.Particle, new Rectangle((int)testPos.X, (int)testPos.Y, 20, 20), Color.Blue);
+
+            spriteBatch.End();
 
             base.Draw(gameTime);
+        }
+
+        public static void changeFloor(Floor newF)
+        {
+            f = newF;
         }
     }
 }

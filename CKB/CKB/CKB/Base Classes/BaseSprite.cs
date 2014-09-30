@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Realms
+namespace CKB
 {
     //This class used to draw an image on the screen
     public class BaseSprite

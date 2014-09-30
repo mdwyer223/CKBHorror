@@ -4,12 +4,17 @@ using System.Linq;
 using System.Text;
 
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace CKB
 {
-    class Floor
+    public class Room200 : Floor
     {
+        public Room200()
+            : base(Image.Particle, Vector2.Zero, 0, 0)
+        {
+
+        }
     }
 }

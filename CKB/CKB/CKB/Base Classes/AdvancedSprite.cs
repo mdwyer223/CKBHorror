@@ -11,24 +11,24 @@ using Microsoft.Xna.Framework.Input;
 namespace Realms
 {
     //This class is to allow code reuse between player, enemies
-    public abstract class AdvancedSprite : Tile
-    {
+    //public abstract class AdvancedSprite : Tile
+    //{
 
-        protected Rectangle drawnRec;
-        public virtual Rectangle DrawnRec
-        {
-            get { return drawnRec; }
-        }
+    //    protected Rectangle drawnRec;
+    //    public virtual Rectangle DrawnRec
+    //    {
+    //        get { return drawnRec; }
+    //    }
 
 
-        public AdvancedSprite(Texture2D texture, float secondsToCrossScreen, Location startLoc)
-            : base(texture, secondsToCrossScreen, startLoc)
-        {            
-        }        
+    //    public AdvancedSprite(Texture2D texture, float secondsToCrossScreen, Location startLoc)
+    //        : base(texture, secondsToCrossScreen, startLoc)
+    //    {            
+    //    }        
 
-        public override void update(GameTime gameTime, Grid gr)
-        {
-            base.update(gameTime, gr);
-        }
-    }
+    //    public override void update(GameTime gameTime, Grid gr)
+    //    {
+    //        base.update(gameTime, gr);
+    //    }
+    //}
 }

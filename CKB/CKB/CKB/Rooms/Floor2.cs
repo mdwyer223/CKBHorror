@@ -4,18 +4,17 @@ using System.Linq;
 using System.Text;
 
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Content;
 
 namespace CKB
 {
-    public static class Image
+    public class Floor2 : Floor
     {
-        public static Texture2D Particle
+        public Floor2()
+            : base(Image.Particle, Vector2.Zero, 800, 480)
         {
-            get { return Game1.GameContent.Load<Texture2D>("Particle"); }
+            color = Color.Green;
         }
-
-        // other images...
     }
 }
