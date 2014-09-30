@@ -37,10 +37,25 @@ namespace CKB
             get { return camera; }
         }
 
+        static ContentManager otherContent;
+        public static ContentManager GameContent
+        {
+            get { return otherContent; }
+        }
+
+        static GraphicsDevice otherDevice;
+        public static Viewport View
+        {
+            get { return otherDevice.Viewport; }
+
+        }
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            otherContent = new ContentManager(Content.ServiceProvider);
+            otherContent.RootDirectory = "Content";
         }
 
         protected override void Initialize()
