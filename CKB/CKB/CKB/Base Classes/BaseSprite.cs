@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace Realms
+namespace CKB
 {
     //This class used to draw an image on the screen
     public class BaseSprite
@@ -50,7 +50,7 @@ namespace Realms
             protected set;
         }
 
-        public int Speed
+        public int Speed//TODO: the magnitude of the velo
         {
             get;
             private set;
@@ -88,7 +88,7 @@ namespace Realms
         }
 
 
-
+        //uses dis formula to get dis between 2 points
         public float measureDis(Vector2 point1, Vector2 point2)
         {
             return (float)Math.Sqrt(Math.Pow(point1.X - point2.X, 2) + Math.Pow(point1.Y - point2.Y, 2));
@@ -96,12 +96,23 @@ namespace Realms
 
         public float measureDis(Vector2 point1)
         {
-            return measureDis(this.Position, point1);
+            return measureDis(this.Center, point1);
         }
 
+        public float measureDis(BaseSprite sprite)
+        {
+            return measureDis(this.Center, sprite.Center);
+        }
+
+        //Checks for collision
         public bool isColliding(Rectangle inRec)
         {
             return this.Rec.Intersects(inRec);
+        }
+
+        public bool isColliding(BaseSprite sprite)
+        {
+            return this.Rec.Intersects(sprite.Rec);
         }
     }
 }

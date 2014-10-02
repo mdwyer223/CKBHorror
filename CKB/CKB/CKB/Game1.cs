@@ -19,6 +19,8 @@ namespace CKB
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        Character p; //TODO: remove later
+
         public enum GameState
         {
             PLAYING, PAUSE, MAIN
@@ -54,6 +56,7 @@ namespace CKB
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+
             otherContent = new ContentManager(Content.ServiceProvider);
             otherContent.RootDirectory = "Content";
         }
@@ -68,6 +71,9 @@ namespace CKB
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            otherDevice = GraphicsDevice;
+
+            p = new Character(Image.Particle, Vector2.Zero);
         }
 
         /// <summary>
@@ -91,6 +97,7 @@ namespace CKB
                 this.Exit();
 
             // TODO: Add your update logic here
+            p.update(gameTime);
 
             base.Update(gameTime);
         }
@@ -103,7 +110,9 @@ namespace CKB
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
+            spriteBatch.Begin();
+            p.draw(spriteBatch);
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }

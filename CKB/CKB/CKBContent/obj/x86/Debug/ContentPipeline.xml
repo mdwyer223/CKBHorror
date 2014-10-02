@@ -1,21 +1,63 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
   <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>Testing\Particle.png</Source>
+      <Name>Testing\Particle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\GitHub\CKBHorror\CKB\CKB\CKB\bin\x86\Debug\Content\Testing\Particle.xnb</Output>
+      <Time>2014-09-30T10:46:42.2444738-04:00</Time>
+    </Item>
+    <Item>
+      <Source>Testing\PomruWalkCycle.png</Source>
+      <Name>Testing\PomruWalkCycle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\GitHub\CKBHorror\CKB\CKB\CKB\bin\x86\Debug\Content\Testing\PomruWalkCycle.xnb</Output>
+      <Time>2014-10-01T14:11:34.436376-04:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\CKB\CKBHorror\CKB\CKB\CKBContent\</RootDirectory>
-      <LoggerRootDirectory>C:\CKB\CKBHorror\CKB\CKB\CKB\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\CKB\CKBHorror\CKB\CKB\CKBContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\CKB\CKBHorror\CKB\CKB\CKB\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\GitHub\CKBHorror\CKB\CKB\CKBContent\</RootDirectory>
+      <LoggerRootDirectory>C:\GitHub\CKBHorror\CKB\CKB\CKB\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\GitHub\CKBHorror\CKB\CKB\CKBContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\GitHub\CKBHorror\CKB\CKB\CKB\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2010-08-23T12:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2010-08-23T12:41:18-04:00</Value>
+      </Assembly>
+      <Assembly>
         <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2014-09-24T08:50:43.1502675-04:00</Value>
+        <Value>2014-09-23T11:59:35.7355691-04:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

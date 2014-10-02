@@ -1,2 +1,10 @@
 C:\CKB\CKBHorror\CKB\CKB\CKB\obj\x86\Debug\CKB.csprojResolveAssemblyReference.cache
 C:\CKB\CKBHorror\CKB\CKB\CKB\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\GitHub\CKBHorror\CKB\CKB\CKB\obj\x86\Debug\CKB.csprojResolveAssemblyReference.cache
+C:\GitHub\CKBHorror\CKB\CKB\CKB\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\GitHub\CKBHorror\CKB\CKB\CKB\bin\x86\Debug\CKB.exe
+C:\GitHub\CKBHorror\CKB\CKB\CKB\bin\x86\Debug\CKB.pdb
+C:\GitHub\CKBHorror\CKB\CKB\CKB\obj\x86\Debug\CKB.exe
+C:\GitHub\CKBHorror\CKB\CKB\CKB\obj\x86\Debug\CKB.pdb
+C:\GitHub\CKBHorror\CKB\CKB\CKB\bin\x86\Debug\Content\Testing\Particle.xnb
+C:\GitHub\CKBHorror\CKB\CKB\CKB\bin\x86\Debug\Content\Testing\PomruWalkCycle.xnb
