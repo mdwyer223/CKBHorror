@@ -22,10 +22,22 @@ namespace CKB
         {
             get { return frames.Length; }
         }
+        public int avFrameWidth
+        {
+            get;
+            private set;
+        }
+        public int avFrameHeight
+        {
+            get;
+            private set;
+        }
                 
         public Animation(Texture2D strip, int frameWidth, float frameTime)
         {
             this.strip = strip;
+            avFrameWidth = frameWidth;
+            avFrameHeight = strip.Height;
 
             frames = new Frame[strip.Width / frameWidth + 1];
             //Set frames
@@ -36,7 +48,17 @@ namespace CKB
         public Animation(Texture2D strip, Frame[] frames)
         {
             this.strip = strip;
-            this.frames = frames;            
+            this.frames = frames;
+
+            int totalfWidth = 0;
+            foreach (Frame f in frames)            
+                totalfWidth += f.Rec.Width;            
+            avFrameWidth = totalfWidth / FrameCount;
+
+            int totalfHeight = 0;
+            foreach (Frame f in frames)
+                totalfHeight += f.Rec.Height;
+            avFrameHeight = totalfHeight / FrameCount;
         }
 
         public Frame getFrame(int index)

@@ -45,6 +45,7 @@ namespace CKB
         {
             if (curAni != null)
             {
+                //Adjust frame index
                 time += (float)gameTime.ElapsedGameTime.TotalSeconds;
                 if (time >= curAni.getFrame(aniIndex).Time)
                 {
@@ -57,16 +58,32 @@ namespace CKB
 
         public override void draw(SpriteBatch spriteBatch)
         {
+            //If (there's no animation) draw normally
             if (curAni == null)
                 base.draw(spriteBatch);
             else
                 spriteBatch.Draw(curAni.Strip, this.rec, curAni.getFrame(aniIndex).Rec, this.color, 0, Vector2.Zero, flip, 0);
         }
 
-        public void playAnimation(Animation ani)
+        protected void playAnimation(Animation ani)
         {
+            //Play animation if it's not already playing or null
             if (ani != null && ani != curAni)
+            {
+
+                //Scale rectangle for new animaiton
+                int inDisplayWidth = Game1.View.Width;
+
+                if (ani.Strip != null)
+                {
+                    rec.Width = (int)(inDisplayWidth * ScaleFactor + 0.5f);
+                    float aspectRatio = (float)ani.avFrameWidth / ani.avFrameHeight;
+                    rec.Height = (int)(rec.Width / aspectRatio + 0.5f);
+                }
+                
+                //Play
                 curAni = ani;
+            }
         }
 
 

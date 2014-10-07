@@ -34,8 +34,15 @@ namespace CKB
             get { return new Vector2(Rec.X, Rec.Y); }
             set
             {
-                rec.X = (int)(value.X + .5);
-                rec.Y = (int)(value.Y + .5);
+                if (value.X > 0)                
+                    rec.X = (int)(value.X + .5);                
+                else
+                    rec.X = (int)(value.X - .5);
+
+                if (value.Y > 0)
+                    rec.Y = (int)(value.Y + .5);
+                else
+                    rec.Y = (int)(value.Y - .5);
             }
         }
 
@@ -56,9 +63,16 @@ namespace CKB
             private set;
         }
 
+        public float ScaleFactor
+        {
+            get;
+            private set;
+        }
+
         public BaseSprite(Texture2D texture, float scaleFactor, float secondsToCrossScreen, Vector2 startPos)
         {
             this.texture = texture;
+            this.ScaleFactor = scaleFactor;
             color = Color.White;
             IsVisible = true;
 
@@ -113,6 +127,13 @@ namespace CKB
         public bool isColliding(BaseSprite sprite)
         {
             return this.Rec.Intersects(sprite.Rec);
+        }
+
+        public bool isColliding(Vector2 point)
+        {
+            bool inX = Rec.X <= point.X && point.X <= Rec.X + Rec.Width;
+            bool inY = Rec.Y <= point.Y && point.Y <= Rec.Y + Rec.Height;
+            return inX && inY;
         }
     }
 }

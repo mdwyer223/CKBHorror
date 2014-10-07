@@ -20,6 +20,7 @@ namespace CKB
         SpriteBatch spriteBatch;
 
         Character p; //TODO: remove later
+        Phone ph;
 
         public enum GameState
         {
@@ -73,7 +74,8 @@ namespace CKB
             spriteBatch = new SpriteBatch(GraphicsDevice);
             otherDevice = GraphicsDevice;
 
-            p = new Character(Image.Particle, Vector2.Zero);
+            p = new Character(Vector2.Zero);
+            ph = new Phone(new Vector2(400, 200));
         }
 
         /// <summary>
@@ -98,7 +100,7 @@ namespace CKB
 
             // TODO: Add your update logic here
             p.update(gameTime);
-
+            ph.update(gameTime);
             base.Update(gameTime);
         }
 
@@ -112,6 +114,7 @@ namespace CKB
 
             spriteBatch.Begin();
             p.draw(spriteBatch);
+            ph.draw(spriteBatch);
             spriteBatch.End();
 
             base.Draw(gameTime);
